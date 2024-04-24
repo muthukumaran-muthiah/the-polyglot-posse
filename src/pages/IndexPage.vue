@@ -1,12 +1,5 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <chat-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></chat-component>
-  </q-page>
+  <q-page class="row items-center justify-evenly"> </q-page>
 </template>
 
 <script setup lang="ts">
