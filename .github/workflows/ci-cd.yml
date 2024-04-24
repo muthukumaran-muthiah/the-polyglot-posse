@@ -39,7 +39,7 @@ jobs:
       
       - name: 'Mobile Build'
         run: |
-          apt-get install gradle
+          sudo apt-get install gradle
           npm install -g @quasar/cli
           npm install -g cordova
           OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} quasar build -m cordova -T android
