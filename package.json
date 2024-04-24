@@ -15,6 +15,7 @@
   "dependencies": {
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
+    "cypress": "^13.8.1",
     "dotenv": "^16.4.5",
     "quasar": "^2.8.0",
     "vue": "^3.4.18",
