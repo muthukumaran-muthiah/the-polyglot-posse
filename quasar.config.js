@@ -55,7 +55,7 @@ module.exports = configure(function (/* ctx */) {
       // publicPath: '/',
       analyze: false,
       env: {
-        OPENAI_KEY: process.env.OPENAI_KEY,
+        OPENAI_KEY: 'sk-proj-kB1xiI3KVPHif2FISzx6T3BlbkFJzDTa8nCRMTyiA9E5xCJk',
       },
       // rawDefine: {}
       // ignorePublicFolder: true,
