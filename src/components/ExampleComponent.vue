@@ -1,35 +1,65 @@
 <template>
   <div class="q-pa-md row justify-center" style="width: 100%">
     <div style="width: 100%">
-      <q-chat-message
-        name="me"
-        avatar="https://cdn.quasar.dev/img/avatar4.jpg"
-        :text="['hey, how are you?']"
-        sent
-        stamp="7 minutes ago"
-      />
-      <q-chat-message
-        name="Jane"
-        avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-        :text="[`doing fine, how r you?`]"
-        stamp="4 minutes ago"
-      />
+      <template v-for="message in messages" :key="message.key">
+        <q-chat-message
+          v-if="message.sender == 'self'"
+          name="me"
+          avatar="https://cdn.quasar.dev/img/avatar4.jpg"
+          :text="[message.text]"
+          sent
+          stamp="7 minutes ago"
+        />
+        <q-chat-message
+          v-else
+          name="Jane"
+          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
+          :text="[message.text]"
+          stamp="4 minutes ago"
+        />
+      </template>
     </div>
     <div class="q-pa-md" style="width: 100%; display: flex">
-      <q-input style="width: 90%" v-model="text" filled autogrow />
+      <q-input
+        @keydown.enter.prevent="submit"
+        style="width: 90%"
+        v-model="text"
+        filled
+        autogrow
+      />
       <q-icon style="widows: 10%; margin-top: 20px" name="send" />
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-  setup() {
+  // Properties returned from data() become reactive state
+  // and will be exposed on `this`.
+  data() {
     return {
-      text: ref(''),
+      text: null,
+      messages: [],
     };
+  },
+
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event handlers in templates.
+  methods: {
+    submit() {
+      this.messages.push({
+        key: Date(),
+        sender: 'self',
+        text: this.text,
+      });
+
+      this.messages.push({
+        key: Date(),
+        text: this.text,
+      });
+
+      this.text = null;
+    },
   },
 };
 </script>
