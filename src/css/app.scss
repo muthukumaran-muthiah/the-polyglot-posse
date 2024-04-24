@@ -1,1 +1,26 @@
-// app global css in SCSS form
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.chatHistory{
+    overflow: scroll;
+    height: 80vh;
+}
+.chat-area{
+    position: absolute;
+    bottom: 0;
+}
+span.chatButton {
+    border: 1px solid;
+    width: 9%;
+    display: flex;
+    justify-content: center;
+    border-radius: 21px;
+    font-size: 1.25rem;
+    align-items: center;
+    i{
+        margin: 0px;
+        transform: rotate(-42deg);
+    }
+}

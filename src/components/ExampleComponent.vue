@@ -1,6 +1,6 @@
 <template>
-  <div class="q-pa-md row justify-center" style="width: 100%">
-    <div style="width: 100%">
+  <div class="q-pa-md row justify-center chat-area" style="width: 100%">
+    <div style="width: 100%" class="chatHistory">
       <template v-for="message in messages" :key="message.key">
         <q-chat-message
           v-if="message.sender == 'self'"
@@ -12,14 +12,14 @@
         />
         <q-chat-message
           v-else
-          name="Jane"
+          name="Leo"
           avatar="https://cdn.quasar.dev/img/avatar3.jpg"
           :text="[message.text]"
           stamp="4 minutes ago"
         />
       </template>
     </div>
-    <div class="q-pa-md" style="width: 100%; display: flex">
+    <div class="q-pa-md" style="width: 100%; display: flex; gap: 12px;">
       <q-input
         @keydown.enter.prevent="submit"
         style="width: 90%"
@@ -27,7 +27,9 @@
         filled
         autogrow
       />
-      <q-icon style="widows: 10%; margin-top: 20px" name="send" />
+      <span class="chatButton">
+      <q-icon style="widows: 10%;" name="send" />
+      </span>
     </div>
   </div>
 </template>
