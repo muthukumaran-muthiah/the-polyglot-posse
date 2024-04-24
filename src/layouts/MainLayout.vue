@@ -62,7 +62,7 @@ const linksList: EssentialLinkProps[] = [
     title: 'Android app',
     caption: 'Download app',
     icon: 'android',
-    link: 'https://github.com/muthukumaran-muthiah/the-polyglot-posse',
+    link: 'https://polyglot-posse-1.s3.ap-south-1.amazonaws.com/Mobile/app-debug.apk',
   },
 ];
 
