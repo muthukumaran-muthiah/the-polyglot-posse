@@ -54,7 +54,9 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      env: require('dotenv').config().parsed,
+      env: {
+        OPENAI_KEY: process.env.OPENAI_KEY,
+      },
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
