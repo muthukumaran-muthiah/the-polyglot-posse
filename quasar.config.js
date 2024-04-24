@@ -53,7 +53,7 @@ module.exports = configure(function (/* ctx */) {
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
       // publicPath: '/',
-      // analyze: true,
+      analyze: false,
       env: {
         OPENAI_KEY: process.env.OPENAI_KEY,
       },
