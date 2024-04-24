@@ -35,10 +35,9 @@ jobs:
 
         - name: "AWS S3 Copy"
           run: |
-            cd dist/spa
             pip install awscli
-            aws s3 sync build "s3://${{ env.cdn_bucket_name }}" --expires 2034-01-01T00:00:00Z --cache-control max-age=2592000
-            aws s3 cp build/index.html "s3://${{ env.cdn_bucket_name }}" --cache-control no-cache,public,max-age=0
+            aws s3 sync dist/spa "s3://${{ env.cdn_bucket_name }}" --expires 2034-01-01T00:00:00Z --cache-control max-age=2592000
+            aws s3 cp dist/spa/index.html "s3://${{ env.cdn_bucket_name }}" --cache-control no-cache,public,max-age=0
   
 
   
