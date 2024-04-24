@@ -21,6 +21,7 @@ jobs:
 
       - name: NPM build
         run: |
+          sed -i "s|XXX_accessToken_XXX|${{ secrets.NPM_ACCESSTOKEN }}|g" ".npmrc"
           npm install
           OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} npm run build
 
@@ -36,19 +37,6 @@ jobs:
           pip install awscli
           aws s3 sync dist/spa "s3://${{ env.cdn_bucket_name }}" --expires 2034-01-01T00:00:00Z --cache-control max-age=2592000
           aws s3 cp dist/spa/index.html "s3://${{ env.cdn_bucket_name }}" --cache-control no-cache,public,max-age=0
-      
-      - name: 'Mobile Build'
-        run: |
-          pwd
-          ls
-          sudo apt-get install gradle
-          npm install -g @quasar/cli
-          npm install -g cordova
-          cd ./src-cordova
-          cordova platform add android
-          ls
-          OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} cordova build android
-          aws s3 cp platforms/android/app/build/outputs/apk/app-debug.apk "s3://${{ env.cdn_bucket_name }}" --cache-control no-cache,public,max-age=0
 
 
 
