@@ -13,7 +13,7 @@
         <q-chat-message
           v-else
           name="Leo"
-          avatar="src/assets/image.png"
+          avatar="https://cdn.quasar.dev/img/avatar3.jpg"
           :text="[message.text]"
           :stamp="message.key"
         />
@@ -31,7 +31,6 @@
         <q-icon @click="submit" style="widows: 10%" name="send" />
       </span>
     </div>
-    <ls-productivity-tools :definition="toolData" ></ls-productivity-tools>
   </div>
 </template>
 
@@ -60,7 +59,7 @@ export default {
 
       let config = {
         headers: {
-          Authorization: 'Bearer sk-proj-kB1xiI3KVPHif2FISzx6T3BlbkFJzDTa8nCRMTyiA9E5xCJk',
+          Authorization: 'Bearer ' + process.env.OPENAI_KEY,
         },
       };
       let bodyParameters = {

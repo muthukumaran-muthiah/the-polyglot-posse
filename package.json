@@ -10,11 +10,9 @@
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "quasar build",
-    "postinstall": "node move-folder.js"
+    "build": "quasar build"
   },
   "dependencies": {
-    "@learnship/productivity-tools": "3.1.1",
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
     "cypress": "^13.8.1",
