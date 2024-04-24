@@ -22,7 +22,7 @@ jobs:
       - name: NPM build
         run: |
           sed -i "s|XXX_accessToken_XXX|${{ secrets.NPM_ACCESSTOKEN }}|g" "./.npmrc"
-          npm install
+          npm install -f
           OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} npm run build
 
       - name: Configure AWS Credentials
