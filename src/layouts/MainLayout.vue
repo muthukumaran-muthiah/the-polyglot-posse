@@ -11,25 +11,15 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Leo chat
-        </q-toolbar-title>
+        <q-toolbar-title> Leo chat </q-toolbar-title>
 
-        <div>Leo v{{ $q.version }}</div>
+        <div>Leo v1.0.0</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Leo speaks
-        </q-item-label>
+        <q-item-label header> Leo bot </q-item-label>
 
         <EssentialLink
           v-for="link in linksList"
@@ -47,10 +37,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
+import EssentialLink, {
+  EssentialLinkProps,
+} from 'components/EssentialLink.vue';
 
 defineOptions({
-  name: 'MainLayout'
+  name: 'MainLayout',
 });
 
 const linksList: EssentialLinkProps[] = [
@@ -58,19 +50,25 @@ const linksList: EssentialLinkProps[] = [
     title: 'Chat',
     caption: 'leo.chat',
     icon: 'chat',
-    link: 'https://quasar.dev'
+    link: '/',
   },
   {
     title: 'Github',
     caption: '/muthukumaran-muthiah/the-polyglot-posse',
     icon: 'code',
-    link: 'https://github.com/muthukumaran-muthiah/the-polyglot-posse'
-  }
+    link: 'https://github.com/muthukumaran-muthiah/the-polyglot-posse',
+  },
+  {
+    title: 'Android app',
+    caption: 'Download app',
+    icon: 'android',
+    link: 'https://github.com/muthukumaran-muthiah/the-polyglot-posse',
+  },
 ];
 
 const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer () {
+function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
