@@ -42,7 +42,6 @@ jobs:
           sudo apt-get install gradle
           npm install -g @quasar/cli
           npm install -g cordova
-          OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} quasar build -m cordova -T android
           cd src-cordova
           OPENAI_KEY=${{ secrets.OPENAI_API_KEY }} cordova build android
           aws s3 cp platforms/android/app/build/outputs/apk/app-debug.apk "s3://${{ env.cdn_bucket_name }}" --cache-control no-cache,public,max-age=0
