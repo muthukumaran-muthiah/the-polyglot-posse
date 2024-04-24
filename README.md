@@ -1,22 +1,37 @@
-# Leo (leo)
+# Leo: A Chat Bot
 
-A chat bot
+This project houses the codebase for Leo, a user-friendly chatbot.
 
-## Install the dependencies
+## Prerequisites
+Before diving in, ensure you have the following tools installed on your system:
+
+- Node.js (https://nodejs.org/en)
+- npm (Node Package Manager) - Typically comes bundled with Node.js
+
+## Installation
+- Clone this repository or download the project files.
+- Navigate to the project directory in your terminal.
+- Run the following command to install all the project dependencies:
 
 ```bash
 yarn
 # or
 npm install
 ```
+## Development
+### Starting the development server:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+Use the following command to launch the development server with hot-code reloading, error reporting, and other features:
 
 ```bash
 quasar dev
 ```
 
-### Lint the files
+## Linting and formatting:
+
+Maintain code quality by running the linter and formatter:
+
+### Lint:
 
 ```bash
 yarn lint
@@ -24,7 +39,7 @@ yarn lint
 npm run lint
 ```
 
-### Format the files
+### Format:
 
 ```bash
 yarn format
@@ -32,16 +47,19 @@ yarn format
 npm run format
 ```
 
-### Build the app for production
+## Building for Production
+To create a production-ready build of the chatbot, execute:
 
 ```bash
 quasar build
 ```
+For building a mobile app specifically for Android, use:
 
 ```bash
 quasar build -m android
 ```
 
-### Customize the configuration
+## Configuration
+For advanced customizations, refer to the Quasar documentation on configuring 
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
