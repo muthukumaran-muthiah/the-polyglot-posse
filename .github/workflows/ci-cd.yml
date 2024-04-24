@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  sso-login-frontend-ci-cd:
+  polyglot-posse-ci-cd:
       name: Deployment
       runs-on: ubuntu-latest
       env:
