@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row justify-center">
+  <div class="q-pa-md row justify-center" style="width: 100%">
     <div style="width: 100%">
       <q-chat-message
         name="me"
@@ -15,29 +15,21 @@
         stamp="4 minutes ago"
       />
     </div>
+    <div class="q-pa-md" style="width: 100%; display: flex">
+      <q-input style="width: 90%" v-model="text" filled autogrow />
+      <q-icon style="widows: 10%; margin-top: 20px" name="send" />
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-// import { computed, ref } from 'vue';
-// import { Todo, Meta } from './models';
+<script>
+import { ref } from 'vue';
 
-// interface Props {
-//   title: string;
-//   todos?: Todo[];
-//   meta: Meta;
-//   active: boolean;
-// }
-
-// const props = withDefaults(defineProps<Props>(), {
-//   todos: () => [],
-// });
-
-// const clickCount = ref(0);
-// function increment() {
-//   clickCount.value += 1;
-//   return clickCount.value;
-// }
-
-// const todoCount = computed(() => props.todos.length);
+export default {
+  setup() {
+    return {
+      text: ref(''),
+    };
+  },
+};
 </script>
